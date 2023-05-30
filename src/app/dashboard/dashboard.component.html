@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-end mb-5">
+  <button class="btn btn-lg btn-primary "><i class="fa fa-plus" aria-hidden="true" (click)="createProduct()"></i></button>
+</div>
+<div class="row row-cols-sm-4 row-cols-4 g-3">
+  <div class="col-1" *ngFor="let product of filterProducts$ | async">
+    <div class="card w-75">
+      <img [src]="product.image" class="card-img-top" alt="card-grid-image">
+      <div class="card-body bg-secondary text-white">
+        <h5 class="card-title mb-3">{{ product.price | currency}}</h5>
+        <h6 class="card-subtitle mb-1">{{product.title}}</h6>
+        <p class="card-text">{{product.category | titlecase}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary btn-sm mx-1" type="button"><i class="fa fa-pencil"
+              (click)="editProduct(product)"></i></button>
+          <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"
+              (click)="deleteProduct(product)"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

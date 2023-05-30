@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{appMode + ' Details' | titlecase }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="productForm" (ngSubmit)="onSave()">
+        <div class="mb-3 mt-3">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required formControlName="title">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter price" name="price" required formControlName="price">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="description" placeholder="Enter description" name="description" required formControlName="description">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="text" class="form-control" id="image" placeholder="Enter image" name="image" required formControlName="image">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="category" class="form-label">Category:</label>
+            <input type="text" class="form-control" id="category" placeholder="Enter category" name="category" required formControlName="category">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-outline-success" (click)="onSave()">Save</button>
+    <button type="button" class="btn btn-outline-danger" (click)="activeModal.close('Close click')">Close</button>
+</div>

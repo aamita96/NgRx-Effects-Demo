@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+</div>
+
+<ng-container *ngIf="loading">
+  <div class="spinner">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="spinner-border" style="width: 8rem; height: 8rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <strong class="d-flex justify-content-center">Loading...</strong>
+  </div>
+  <div class="backdrop"></div>
+</ng-container>
